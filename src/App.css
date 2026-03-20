@@ -1,0 +1,56 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: auto;
+}
+
+/* Pin spacer styling */
+.pin-spacer {
+  background: transparent !important;
+}
+
+/* Section base styles */
+section {
+  position: relative;
+  will-change: transform;
+}
+
+/* Ensure proper z-index stacking for pinned sections */
+section[data-scroll-trigger] {
+  isolation: isolate;
+}
+
+/* Card hover transitions */
+.portfolio-tile,
+.pricing-card {
+  will-change: transform;
+}
+
+/* Button focus states */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(57, 255, 20, 0.5);
+  outline-offset: 2px;
+}
+
+/* Mobile touch optimization */
+@media (hover: none) {
+  .portfolio-tile:hover,
+  .pricing-card:hover {
+    transform: none;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
